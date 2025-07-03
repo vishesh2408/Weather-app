@@ -3,7 +3,9 @@ import React, { useEffect, useState, useCallback } from 'react';
 import { View, Text, StyleSheet, Switch, Image, TouchableOpacity, ActivityIndicator, Platform, ScrollView } from 'react-native';
 // Specific React Native community packages
 import { Picker } from '@react-native-picker/picker'; // For dropdowns
-import * as Location from 'expo-location'; // For geolocation in Expo
+import * as Location from 'expo-location';
+// For geolocation in Expo
+import { API_KEY } from '@env';
 
 // Define countries and cities for manual selection
 const countries = [
@@ -95,7 +97,7 @@ const App = () => {
         setLoading(true);
         setError(null);
         // OpenWeatherMap API Key
-        const API_KEY = "40ffb04cdf00190365881d00fed3c2d1"; // API Key provided by the user
+        // API Key provided by the user
         const WEATHER_API_URL = "https://api.openweathermap.org/data/2.5/weather";
 
         if (!API_KEY || API_KEY.length < 30) {
